@@ -2,9 +2,11 @@
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
-  'ngRoute',
-  'myApp.login',
-  'myApp.post',
+    'ngRoute',
+    'myApp.login',
+    'myApp.post',
+//    'angular-growl',
+    'ngStorage'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
