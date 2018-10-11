@@ -1,4 +1,5 @@
 <div ng-controller="PostCtrl" class="limiter">
+  // TODO: Add back buttons, try fix img
   <div id="base" class="">
     <div class="box center">
       Produce
@@ -16,6 +17,7 @@
           <div class="">${{x.price}}</div>
           <div class="title">Address</div>
           <div class="">{{x.address}}</div>
+          <a ng-href="https://www.google.com/maps/?q={{x.lat}},{{x.long}}">Map</a>
         </div>
       </div>
   </div>

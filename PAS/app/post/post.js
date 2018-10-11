@@ -32,7 +32,29 @@ angular.module('myApp.post', []).controller('PostCtrl', function($scope, $localS
     $scope.posts = $localStorage.posts;
     $scope.newPost = {};
 
+    function setPosition(position) {
+        $scope.newPost.lat = position.coords.latitude;
+        $scope.newPost.long = position.coords.longitude;
+    }
+
+    function displayError(error) {
+        var errors = {
+            1: 'Permission denied',
+            2: 'Position unavailable',
+            3: 'Request timeout'
+        };
+        alert("Error: " + errors[error.code]);
+    }
+
     $scope.save = function() {
+        if (navigator.geolocation) {
+            var timeoutVal = 10 * 1000 * 1000;
+            navigator.geolocation.getCurrentPosition(
+                setPosition,
+                displayError,
+                { enableHighAccuracy: true, timeout: timeoutVal, maximumAge: 0 }
+            );
+        }
         if ($scope.newPost.title) {
             $scope.newPost.vendor = "United Farming Zim";
             $scope.newPost.createDate = new Date();
