@@ -1,5 +1,25 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<div ng-controller="PostCtrl" class="limiter">
+  <div id="base" class="">
+    <div class="box center">
+      Produce
+    </div>
+    <div id="search" class="input-group input">
+      <input  type="text" ng-model="searchText" placeholder="Search..." class="form-control" aria-label="With textarea"></input>
+    </div>
+      <div class="wrapper" ng-repeat="x in posts | filter : searchText">
+        <div class="img-post-container">
+          <img class="img-post" src="{{x.imgLocation}}" />
+        </div>
+        <div class="detail-post-container">
+          <div class="title">{{x.title}}</div>
+          <div class="">{{x.description}}</div>
+          <div class="">${{x.price}}</div>
+          <div class="title">Address</div>
+          <div class="">{{x.address}}</div>
+        </div>
+      </div>
+  </div>
+  <div ng-click="new()" class="add-post">
+    <img style="width:64px" src="/images/add.jpg" />
+  </div>
+</div>

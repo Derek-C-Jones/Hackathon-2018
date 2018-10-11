@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add product</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/add_product/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/scripts/jquery-1.7.1.min.js"></script>
+    <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="resources/scripts/prototypePre.js"></script>
+    <script src="data/document.js"></script>
+    <script src="resources/scripts/prototypePost.js"></script>
+    <script src="files/add_product/data.js"></script>
+    <script type="text/javascript">
+        $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+        $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+        $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+</head>
+<body>
+<div ng-controller="PostCtrl" id="base" class="container">
+
+    <div class="box center">
+        Create Product
+    </div>
+
+    <div class="input-group mb-3 input">
+        <input ng-model="newPost.title" placeholder="Title" type="text" class="form-control">
+    </div>
+
+    <div class="input-group mb-3 input">
+        <input ng-model="newPost.description" placeholder="Description" type="text" class="form-control">
+    </div>
+
+    <div class="input-group mb-3 input">
+        <input ng-model="newPost.price" placeholder="Price" type="number" class="form-control">
+    </div>
+
+    <div class="input-group input">
+        <textarea ng-model="newPost.address" placeholder="Enter the address here" class="form-control" aria-label="With textarea"></textarea>
+    </div>
+
+    <div class="input-group input">
+        <input placeholder="Price" type="file" class="form-control" fd-input ng-model="lastfile">
+    </div>
+
+    <div class="input">
+        <button ng-click="save()" type="button" class="btn btn-primary input">Save</button>
+    </div>
+
+</div>
+</body>
+</html>

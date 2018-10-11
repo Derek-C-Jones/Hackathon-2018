@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.login', []).controller('LoginCtrl', function($scope, $localStorage, $sessionStorage, $location, growl) {
+angular.module('myApp.misc', []).controller('LoginCtrl', function($scope, $localStorage, $sessionStorage, $location, growl) {
 
     $localStorage.users = undefined;
     $scope.description = "Login Screen"
@@ -38,10 +38,7 @@ angular.module('myApp.login', []).controller('LoginCtrl', function($scope, $loca
             return;
         }
         $sessionStorage.currentUser = user;
-        if (user.role == "vendor")
-            $location.path('/post');
-        else
-            $location.path('/list');
+        $location.path('/post');
     }
 })
 
@@ -50,4 +47,4 @@ angular.module('myApp.login', []).controller('LoginCtrl', function($scope, $loca
     templateUrl: 'login/login.html',
     controller: 'LoginCtrl'
   });
-}]);
+}])
