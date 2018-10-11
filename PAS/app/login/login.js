@@ -1,14 +1,14 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute'])
+angular.module('myApp.login', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {
-    templateUrl: 'view1/login.html',
-    controller: 'View1Ctrl'
+  $routeProvider.when('/login', {
+    templateUrl: 'login/login.html',
+    controller: 'LoginCtrl'
   });
 }])
 
-.controller('View1Ctrl', [function() {
+.controller('LoginCtrl', [function() {
 
 }]);
