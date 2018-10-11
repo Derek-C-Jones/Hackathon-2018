@@ -5,7 +5,7 @@ angular.module('myApp', [
     'ngRoute',
     'myApp.login',
     'myApp.post',
-//    'angular-growl',
+    'angular-growl',
     'ngStorage'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
