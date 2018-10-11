@@ -10,5 +10,12 @@ angular.module('myApp.login', ['ngRoute'])
 }])
 
 .controller('LoginCtrl', [function() {
+    $scope.description = "Login Screen"
+    $scope.toAdd = [];
+    $scope.userLogin = "username": "karelv@xpedia.co.za", "password":"password"
 
+    &scope.signUp = function(){
+        var addUser = {"username":$scope.userLogin.username, "password":$scope.userLogin.password}
+        $scope.toAdd.push(addUser);
+    }
 }]);
